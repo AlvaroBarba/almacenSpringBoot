@@ -77,8 +77,10 @@ public class Client {
 
     public void setOrders(List<Pedidos> pedidos) {
         this.clientPedidos = pedidos;
-        for(Pedidos a : pedidos){
-            a.setClient(this);
+        if(pedidos != null && !pedidos.isEmpty()){
+            for(Pedidos a : pedidos){
+                a.setClient(this);
+            }
         }
     }
 }
