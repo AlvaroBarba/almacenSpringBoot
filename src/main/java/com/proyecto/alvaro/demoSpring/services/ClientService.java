@@ -81,13 +81,4 @@ public class ClientService {
             return new ArrayList<>();
         }
     }
-
-    public List<Pedidos> getOrdersOfClient(Long id){
-        List<Pedidos> pedidos = repository.getClientOrders(id);
-        if(pedidos.size() > 0){
-            return pedidos;
-        }else{
-            return new ArrayList<>();
-        }
-    }
 }

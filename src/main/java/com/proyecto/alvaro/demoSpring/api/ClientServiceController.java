@@ -38,12 +38,6 @@ public class ClientServiceController {
         return new ResponseEntity<List<Client>>(clients, new HttpHeaders(), HttpStatus.OK);
     }
 
-    @GetMapping("/pedidos/{id}")
-    public ResponseEntity<List<Pedidos>> getOrdersOfClients(@PathVariable("id") Long id) throws RecordNotFoundException{
-        List<Pedidos> pedidos = service.getOrdersOfClient(id);
-        return new ResponseEntity<List<Pedidos>>(pedidos, new HttpHeaders(), HttpStatus.OK);
-    }
-
     @PostMapping
     public ResponseEntity<Client> createClient(@Valid @RequestBody Client client) throws RecordNotFoundException{
         Client aux = service.createClient(client);

@@ -14,7 +14,5 @@ public interface ClientRepost extends JpaRepository<Client, Long> {
     @Query(value = "SELECT * FROM client WHERE name = ?1", nativeQuery = true)
     public List<Client> getClientByName(String name);
 
-    @Query(value = "SELECT client.pedidos FROM client WHERE id = ?1", nativeQuery = true)
-    public List<Pedidos> getClientOrders(Long id);
 
 }
