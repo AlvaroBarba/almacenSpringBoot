@@ -16,12 +16,12 @@ public class Item_Order {
     @Column(name = "id", unique = true, nullable = false)
     private Long id;
 
-    @JsonIgnoreProperties(value = {"items"}, allowSetters = true)
+    @JsonIgnoreProperties(value = {"pedidos"}, allowSetters = true)
     @ManyToOne(cascade = {CascadeType.MERGE}, optional = false)
     @JoinColumn(name = "id_item")
     private Item item;
 
-    @JsonIgnoreProperties(value = {"pedidos"}, allowSetters = true)
+    @JsonIgnoreProperties(value = {"items"}, allowSetters = true)
     @ManyToOne(cascade = {CascadeType.MERGE}, optional = false)
     @JoinColumn(name = "id_pedido")
     private Pedidos pedidos;
@@ -43,7 +43,7 @@ public class Item_Order {
 
     public void setItem(Item item) {
         this.item = item;
-        List<Item_Order> items = this.item.getItems();
+        List<Item_Order> items = this.item.getPedidos();
         if(items == null){
             items = new ArrayList<>();
         }

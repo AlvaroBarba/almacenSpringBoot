@@ -23,7 +23,7 @@ public class Pedidos {
 
     @JsonIgnoreProperties(value = {"pedidos"}, allowSetters = true)
     @OneToMany(mappedBy = "pedidos", cascade = {CascadeType.MERGE})
-    private List<Item_Order> pedidos;
+    private List<Item_Order> items;
 
     public Long getId() {
         return id;
@@ -49,11 +49,11 @@ public class Pedidos {
     }
 
     public List<Item_Order> getItems() {
-        return pedidos;
+        return items;
     }
 
     public void setItems(List<Item_Order> pedidos) {
-        this.pedidos = pedidos;
+        this.items = pedidos;
         for(Item_Order a : pedidos){
             a.setOrder(this);
         }

@@ -23,7 +23,7 @@ public class Item {
 
     @JsonIgnoreProperties(value = {"item"}, allowSetters = true)
     @OneToMany(mappedBy = "item", cascade = {CascadeType.MERGE})
-    private List<Item_Order> items;
+    private List<Item_Order> pedidos;
 
     public Long getId() {
         return id;
@@ -49,13 +49,13 @@ public class Item {
         this.price = price;
     }
 
-    public List<Item_Order> getItems() {
-        return items;
+    public List<Item_Order> getPedidos() {
+        return pedidos;
     }
 
-    public void setItems(List<Item_Order> items) {
-        this.items = items;
-        for(Item_Order a : items){
+    public void setPedidos(List<Item_Order> pedidos) {
+        this.pedidos = pedidos;
+        for(Item_Order a : pedidos){
             a.setItem(this);
         }
     }

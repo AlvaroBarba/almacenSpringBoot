@@ -1,7 +1,6 @@
 package com.proyecto.alvaro.demoSpring.services;
 
 import com.proyecto.alvaro.demoSpring.execption.RecordNotFoundException;
-import com.proyecto.alvaro.demoSpring.model.Client;
 import com.proyecto.alvaro.demoSpring.model.Item;
 import com.proyecto.alvaro.demoSpring.repositories.ItemRepost;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +28,7 @@ public class ItemService {
                 Item newItem = aux.get();
                 newItem.setName(item.getName());
                 newItem.setPrice(item.getPrice());
-                newItem.setItems(item.getItems());
+                newItem.setPedidos(item.getPedidos());
 
                 newItem = repository.save(newItem);
 
